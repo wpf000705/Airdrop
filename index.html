@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>空投小助手</title>
+  </head>
+  <style>
+    input {
+      display: block;
+      margin-bottom: 12px;
+      width: 330px;
+    }
+    
+  </style>
+  <body>
+      <div id="t-warp">
+    <h1>空投小助手</h1>
+    <input type="file" id="fileInput" onclick="App.browseFolder()">
+    <textarea style="width:400px;height:200px;" id="receiver"></textarea> 
+    <div>
+    <h1>批量转bnb</h1>
+    
+    <label for="amount">数量:</label>
+    <input type="text" id="amount" placeholder="例如: 0.1(所有地址都转0.1个)" />
+
+    <button onclick="App.sendCoin(1)">发送</button>
+  </div> 
+  <div>
+    <h1>批量转erc20(在发送之前先授权使用代币)</h1>
+    <label for="receiver">代币合约:</label>
+    <input
+      type="text"
+      id="ContractAddress"
+      placeholder="例如: 0x6001600A144166e14075963eE9bF03e194f638Fe"
+      value=""
+    />
+    <label for="amount">数量:</label>
+    <input type="text" id="amount1" placeholder="例如: 0.1(所有地址都转0.1个)"  value=""/>
+    <button onclick="App.approve()">授权</button>
+    <button onclick="App.sendCoin(2)">发送</button>
+  </div> 
+    <p id="status"></p>
+    <script src="index.min.js"></script>
+  </div>
+  </body>
+</html>
